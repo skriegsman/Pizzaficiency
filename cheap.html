@@ -10,9 +10,8 @@ API:
 <script type="text/javascript">
   function orderCheap() {
     var loc = new Address(document.getElementById("loc").value);
+    console.log(loc);
 
-    var pizzapi = require('pizzapi');
-    pizzapi.Util.findNearbyStores(loc,'Delivery',function(storeData){console.log(storeData);});
   }
 
   function initMap() {
@@ -24,12 +23,12 @@ API:
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
 
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('loc', function() {
       infowindow.close();
       infowindowContent.children['place-address'].textContent = place.address_components;
     });
 
-    setupClickListener('changetype-all', []);
+
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCpZRznx8MGzgod2ljZPQncSqvZrLi9z8&libraries=places&callback=initMap" async defer></script>
