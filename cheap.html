@@ -1,57 +1,23 @@
-<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-
-<style>
-  input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-  label {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 30px;
-  }
-  input {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 20px;
-  }
-  button {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 25px;
-    width: 100%;
-    background-color: #75A3AA;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  button:hover { background-color: #75A3DC; }
-</style>
+<!--
+API:
+- Dominoes:
+  - https://github.com/RIAEvangelist/node-dominos-pizza-api
+  - 700 Clark Ave, St. Louis, MO, 63102
+- PapaJohn:
+  - https://github.com/contra/papajohns
+-->
 
 <script type="text/javascript">
-  function orderFast() {
-    var loc = document.getElementById("loc").value;
-    document.write("Fast: " + loc)
-  }
   function orderCheap() {
-    var loc = document.getElementById("loc").value;
-    document.write("Cheap: " + loc)
+    var loc = new Address(document.getElementById("loc").value);
+
+    var pizzapi = require('pizzapi');
+    pizzapi.Util.findNearbyStores(loc,'Delivery',function(storeData){console.log(storeData);});
   }
 </script>
 
 <form name="Order Form" id="orderForm" class="form_class">
-  <label for="loc">Location:</label><br>
+  <label for="loc" id='title'>Location:</label><br>
   <input type="text" id="loc" name="loc" placeholder="123 Main Street">
-  <button type="submit" form="orderForm" value="fast" onClick="orderFast()"><b>FAST</b> - <i>find the slice of pizza closest to you</i></button>
   <button type="submit" form="orderForm" value="cheap" onClick="orderCheap()"><b>CHEAP</b> - <i>find the cheapest pizza within a reasonable distance</i></button>
 </form>
