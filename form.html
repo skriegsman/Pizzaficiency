@@ -11,23 +11,6 @@
     box-sizing: border-box;
   }
 
-  input[type=submit] {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 25px;
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-
   div {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -36,30 +19,38 @@
 
   label {
     font-family: 'PT Sans', sans-serif;
-    font-size: 25px;
+    font-size: 30px;
   }
 
-  select, input {
+  input {
     font-family: 'PT Sans', sans-serif;
     font-size: 20px;
   }
+
+  button {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 25px;
+    width: 100%;
+    background-color: #75A3AA;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #75A3DC;
+  }
 </style>
 
-<form action="action_page.php">
+<form action="action_page.php" id="orderForm">
 
-  <label for="location">Location</label><br>
+  <label for="location">Location:</label><br>
   <input type="text" id="location" name="location" placeholder="123 Main Street">
 
-  <br><br>
-
-  <label for="sType">Search Type:</label><br>
-  <select id="sType" name="searchType" size="2" multiple>
-      <option value="fast">Fast - find the slice of pizza closest to you!</option>
-      <option value="cheap">Cheap - Find the cheapest pizza within a reasonable distance</option>
-  </select>
-
-  <br><br>
-
-  <input type="submit" value="Submit">
+  <button type="radio" form="orderForm" value="fast"><b>FAST</b> - <i>find the slice of pizza closest to you</i></button>
+  <button type="radio" form="orderForm" value="fast"><b>CHEAP</b> - <i>find the cheapest pizza within a reasonable distance</i></button>
 
 </form>
