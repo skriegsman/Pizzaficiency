@@ -14,6 +14,7 @@ API:
     var pizzapi = require('pizzapi');
     pizzapi.Util.findNearbyStores(loc,'Delivery',function(storeData){console.log(storeData);});
   }
+  
   function initMap() {
     var input = document.getElementById('loc');
     var autocomplete = new google.maps.places.Autocomplete(input);
