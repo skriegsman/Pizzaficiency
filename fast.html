@@ -1,3 +1,10 @@
+<label for="loc">Location:</label><br>
+<input type="text" id="loc" name="loc" placeholder="123 Main Street">
+<div id="map"></div>
+
+<button type="button" form="orderForm" value="fast" onClick="orderFast()"><b>FAST</b> - <i>find the slice of pizza closest to you</i></button>
+
+
 <script>
   function orderFast() {
     var loc = document.getElementById("loc").value;
@@ -41,11 +48,3 @@
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCpZRznx8MGzgod2ljZPQncSqvZrLi9z8&libraries=places&callback=initMap" async defer></script>
-
-<form name="Order Form" id="orderForm" class="form_class">
-  <label for="loc">Location:</label><br>
-  <input type="text" id="loc" name="loc" placeholder="123 Main Street">
-  <div id="map"></div>
-
-  <button type="submit" form="orderForm" value="fast" onClick="orderFast()"><b>FAST</b> - <i>find the slice of pizza closest to you</i></button>
-</form>

@@ -10,7 +10,7 @@ API:
 <script type="text/javascript">
   function orderCheap() {
     var loc = new Address(document.getElementById("loc").value);
-    console.log(loc);
+    document.write(loc);
 
   }
 
@@ -35,8 +35,8 @@ API:
 
 <form name="Order Form" id="orderForm" class="form_class">
   <label for="loc" id='title'>Location:</label><br>
+  <input type="text" id="loc" name="loc" placeholder="123 Main Street">
   <div id='map'></div>
 
-  <input type="text" id="loc" name="loc" placeholder="123 Main Street">
   <button type="submit" form="orderForm" value="cheap" onClick="orderCheap()"><b>CHEAP</b> - <i>find the cheapest pizza within a reasonable distance</i></button>
 </form>
