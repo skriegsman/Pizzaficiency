@@ -11,7 +11,7 @@
     geocoder.geocode({'placeId': id}, function(results, status) {
       if (status === 'OK') {
         if (results[0]) {
-          var pizzaPlace = results[0].formatted_address
+          var pizzaPlace = results[0].formatted_address;
         } else {
           window.alert('No results found');
         }
